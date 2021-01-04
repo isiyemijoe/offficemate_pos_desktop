@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hovering/hovering.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'dart:async';
-
 import 'staticItems.dart';
 import 'AppEngine.dart';
 
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-      primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
     );
@@ -26,7 +25,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -85,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.only(top:50),
+              margin: EdgeInsets.only(top: 50),
               color: white,
               child: Column(
                 children: [
@@ -99,10 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           padding: EdgeInsets.symmetric(horizontal: 100),
                           decoration: BoxDecoration(
                               gradient: new LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [Color(0xff00d1ff), Color(0xff007dff)],
-                              )),
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [Color(0xff00d1ff), Color(0xff007dff)],
+                          )),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -135,7 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                           "Fast"
                                         ],
                                         textStyle: TextStyle(
-                                            fontSize: 60.0, fontFamily: "Horizon"),
+                                            fontSize: 60.0,
+                                            fontFamily: "Horizon"),
                                         textAlign: TextAlign.center),
                                     Text(
                                       "accounting",
@@ -152,7 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               Text(
                                 "Showcase your ingenuity and keep your books in order with officemate. Enjoy real double entry accounting, track expenses and receivables and have a complete picture of the financial status of your business.",
                                 textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white, fontSize: 20),
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
                               ),
                               SizedBox(
                                 height: 60,
@@ -167,10 +167,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                   color: Color(0xff007dff),
                                   hoverColor: Color(0xff00d1ff),
                                   hoverElevation: 5,
-                                  animationDuration: Duration(milliseconds: 200),
+                                  animationDuration:
+                                      Duration(milliseconds: 200),
                                   shape: Border.all(color: Colors.transparent),
                                   hoverShape:
-                                  Border.all(color: Colors.white, width: 2),
+                                      Border.all(color: Colors.white, width: 2),
                                   child: Center(
                                     child: Text(
                                       "Start free trial",
@@ -204,15 +205,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Flexible(
                                       child: Center(
                                           child: Image.asset(
-                                            carousal[index][1],
-                                          )),
+                                        carousal[index][1],
+                                      )),
                                     ),
                                     Flexible(
                                         child: Container(
                                             padding: EdgeInsets.only(right: 20),
                                             child: Column(
                                                 mainAxisAlignment:
-                                                MainAxisAlignment.center,
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Text(
                                                     carousal[index][0],
@@ -221,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                         color: thirdVariant,
                                                         fontSize: 40,
                                                         fontWeight:
-                                                        FontWeight.w500),
+                                                            FontWeight.w500),
                                                   ),
                                                   SizedBox(height: 20),
                                                   hoverBtn("Try for free",
@@ -230,11 +231,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                                       textColor: white,
                                                       hoverColor: white,
                                                       hoverTextColor:
-                                                      Color(0xff007bff),
+                                                          Color(0xff007bff),
                                                       borderColor:
-                                                      Colors.transparent,
+                                                          Colors.transparent,
                                                       hoverBorderColor:
-                                                      secondaryColor),
+                                                          secondaryColor),
                                                 ])))
                                   ]));
                             },
@@ -251,14 +252,13 @@ class _MyHomePageState extends State<MyHomePage> {
             duration: Duration(milliseconds: 400),
             padding: EdgeInsets.symmetric(
                 horizontal: 100.0, vertical: navPadding ? 10 : 0),
-            decoration: BoxDecoration(color: white,
-                boxShadow: [
-                  BoxShadow(
-                      spreadRadius: 10,
-                      blurRadius: 10,
-                      color: Colors.black.withOpacity(0.2),
-                      offset: Offset(0, 3))
-                ]),
+            decoration: BoxDecoration(color: white, boxShadow: [
+              BoxShadow(
+                  spreadRadius: 10,
+                  blurRadius: 10,
+                  color: Colors.black12.withOpacity(0.2),
+                  offset: Offset(0, 3))
+            ]),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -272,7 +272,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     HoverWidget(
-                      onHover: (_) {},
+                      onHover: (_) {
+                        showSignin = true;
+                      },
                       child: Text(
                         "How To",
                         style: TextStyle(
