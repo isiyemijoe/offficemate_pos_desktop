@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hovering/hovering.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:officemate_pos_cavidel/signin.dart';
 import 'dart:async';
 import 'staticItems.dart';
 import 'AppEngine.dart';
@@ -35,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool navPadding = false;
   PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
+  bool showSignIn = false;
 
   @override
   void dispose() {
@@ -273,7 +275,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     HoverWidget(
                       onHover: (_) {
-                        showSignin = true;
+                        showSignIn = true;
                       },
                       child: Text(
                         "How To",
@@ -354,7 +356,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: 20,
                     ),
                     HoverWidget(
-                      onHover: (_) {},
+                      onHover: (_) {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (builder) => Signin()));
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.end,
